@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prachalita </title>
+    <style>
+        body {
+            background-color: #ffccff;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #ff66b2;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            display: none;
+        }
+        .memory {
+            background-color: #ffe6f2;
+            border: 2px solid #ff99cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-size: 1.2em;
+        }
+        .section-title {
+            color: #ff66b2;
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .gift {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ff66b2;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .nicknames {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .nickname {
+            margin: 0 10px;
+            padding: 10px 15px;
+            background-color: #ff99cc;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            font-size: 1.1em;
+            text-align: center;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nickname:hover {
+            background-color: #ff66b2;
+        }
+        #passkeyPrompt {
+            text-align: center;
+            margin-top: 100px;
+        }
+        #passkeyInput {
+            padding: 10px;
+            font-size: 1em;
+        }
+        #passkeyButton {
+            padding: 10px 20px;
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Prachalita</h1>
+
+    <!-- Passkey Section -->
+    <div id="passkeyPrompt">
+        <p>Please enter the passkey to view the page:</p>
+        <input type="password" id="passkeyInput" placeholder="Enter passkey">
+        <button id="passkeyButton">Submit</button>
+        <p id="errorMessage" style="color: red;" class="hidden">Milena sathi feri try gara</p>
+    </div>
+
+    <!-- Content Section (Initially Hidden) -->
+    <div class="container" id="contentContainer">
+        <!-- Memories Section -->
+        <div class="section-title">Memories</div>
+        <div class="memory">
+            <p>City scape</p>
+            <p><strong><img src="C:\Users\LENOVO\Desktop\ityscape.jpg" alt="Description of the image" width="300" height="300">
+</strong></p>
+        </div>
+        <div class="memory">
+            <p>Chaila</p>
+            <p><strong><img src="C:\Users\LENOVO\Desktop\haila.jpg" alt="Description of the image" width="300" height="300"></strong></p>
+        </div>
+        <div class="memory">
+            <p>Just another resturant</p>
+            <p><strong><img src="C:\Users\LENOVO\Desktop\ustanotherresturant.jpg" alt="Description of the image" width="300" height="300"></strong></p>
+        </div>
+
+        <!-- Nicknames Section -->
+        <div class="section-title">Nicknames for Prachalita</div>
+        <div class="nicknames">
+            <div class="nickname">❤️ Chintu ❤️</div>
+            <div class="nickname">❤️ Punti ❤️</div>
+            <div class="nickname">❤️ Sanomanche ❤️</div>
+            <div class="nickname">❤️ Maya ❤️</div>
+        </div>
+
+        <!-- Gift Button -->
+        <div class="section-title">Your Surprise Gift</div>
+        <button class="gift" onclick="displayLoveMessage()">🎁 Get Your Gift</button>
+        <p id="loveMessage" style="text-align: center; color: #ff66b2; font-size: 1.5em; margin-top: 20px;"></p>
+    </div>
+
+    <script>
+        // Function to check the passkey
+        document.getElementById('passkeyButton').addEventListener('click', function() {
+            var passkey = document.getElementById('passkeyInput').value;
+            if (passkey === 'chintu') {
+                document.getElementById('passkeyPrompt').classList.add('hidden');
+                document.getElementById('contentContainer').style.display = 'block';
+            } else {
+                document.getElementById('errorMessage').classList.remove('hidden');
+            }
+        });
+
+        // Function to display love message when clicking on the gift
+        function displayLoveMessage() {
+            document.getElementById("loveMessage").innerHTML = "I Love You A LOTTTT Prachalita, and I am missing you soooo much!";
+        }
+    </script>
+
+</body>
+</html>
